@@ -10,6 +10,8 @@
    [edge.sources :refer [source-routes]]
    [edge.phonebook :refer [phonebook-routes]]
    [edge.phonebook-app :refer [phonebook-app-routes]]
+   [edge.todo :refer [todo-routes]]
+   [edge.todo-app :refer [todo-app-routes]]
    [edge.hello :refer [hello-routes other-hello-routes]]
    [schema.core :as s]
    [selmer.parser :as selmer]
@@ -49,6 +51,9 @@
 
     (phonebook-routes db config)
     (phonebook-app-routes db config)
+
+    (todo-routes db config)
+    (todo-app-routes db config)
 
     ["/api" (-> (hello-routes)
                 ;; Wrap this route structure in a Swagger
